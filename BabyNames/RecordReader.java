@@ -14,7 +14,7 @@ public class RecordReader
    public RecordReader(double aLimit)
    {
       total = 0;
-      limit = aLimit;
+      limit = aLimit/2;
    }
 
    /**
@@ -24,12 +24,15 @@ public class RecordReader
    */
    public void process(Scanner in)
    {
-      String name = in.next();
-      int count = in.nextInt();
-      double percent = in.nextDouble();
+    String name = in.next();
+    int amount = in.nextInt();  
+    
+     //String name = in.next();
+      //int amount = in.nextInt();
       
       if (total < limit) { System.out.print(name + " "); }
-      total = total + percent;
+      total = total + amount;
+    
    }
 
    /**
@@ -38,6 +41,6 @@ public class RecordReader
    */
    public boolean hasMore()
    {
-      return total < limit;
+     return total < limit;
    }
 }
