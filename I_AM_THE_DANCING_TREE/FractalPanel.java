@@ -55,5 +55,8 @@ class FractalPanel extends JPanel
         super.paintComponent(g);
         g.setColor(Color.WHITE);
         drawFractal(BASE_X, BASE_Y, BASE_X, TIP_Y, g, initialAngle_Radians, initialLength);
+        CityscapeComponent comp = new CityscapeComponent();
+        Graphics2D g2 = (Graphics2D) g;
+        comp.nextFrame(g2);
     }
 }
